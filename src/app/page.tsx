@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface Portfolio {
   id: number;
@@ -34,7 +35,7 @@ export default function Home() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {portfolios.map((portfolio) => (
           <div key={portfolio.id} className="border rounded-lg p-4 flex flex-col">
-            <img src={portfolio.imageUrl} alt={portfolio.title} className="w-full h-48 object-cover rounded-md mb-4" />
+            <Image src={portfolio.imageUrl} alt={portfolio.title} width={500} height={300} className="w-full h-48 object-cover rounded-md mb-4" />
             <h2 className="text-xl font-semibold">{portfolio.title}</h2>
             <p className="text-gray-600 flex-grow">{portfolio.description}</p>
             <div className="mt-4">

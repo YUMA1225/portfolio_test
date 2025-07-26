@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
+import Image from 'next/image';
 
 interface Portfolio {
   id: number;
@@ -93,7 +94,7 @@ export default function PortfolioDetail() {
         </form>
       ) : (
         <div>
-          <img src={portfolio.imageUrl} alt={portfolio.title} className="w-full h-96 object-cover rounded-md mb-4" />
+          <Image src={portfolio.imageUrl} alt={portfolio.title} width={800} height={600} className="w-full h-96 object-cover rounded-md mb-4" />
           <h1 className="text-3xl font-bold mb-2">{portfolio.title}</h1>
           <p className="text-gray-700 mb-4">{portfolio.description}</p>
           <a href={portfolio.url} target="_blank" rel="noopener noreferrer" className="text-green-500 hover:underline">
